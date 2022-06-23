@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>can nang</title>
+    <style>
+        div{
+            margin: 250px auto;
+            width: 400px;
+            border: 2px solid blue;
+            background-color: aquamarine;
+            box-shadow:5px 5px 5px #008080;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th>
+                <input type="text" id="canNang">
+            </th>
+            <th>
+                <input type="text" id="chieuCao">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                CÂN NẶNG
+            </th>
+            <th>
+                CHIỀU CAO
+            </th>
+        </tr>
+        <tr>
+            <th>
+                BMI
+            </th>
+            <th>
+                <input type="text" id="imb">
+            </th>
+            <th>
+                <button  onclick="tinhToan()">xem</button>
+            </th>
+        </tr>
+        <script>
+            function tinhToan() {
+                let cannang= document.getElementById("canNang").value;
+                let chieucao= document.getElementById("chieuCao").value;
+                let bmi = parseInt(cannang)/(parseFloat(chieucao)*2)
+                let result;
+                if(cannang && chieucao){
+                if (bmi < 18){
+                    result = "om";
+                }
+                else if (bmi < 25.0){
+                    result =  "can doi";
+                }
+                else if (bmi < 30.0){
+                    result = "hoi beo";
+                }
+                else{
+                    result = "beo";
+                }}
+                else{
+                    result="";
+                }
+                document.getElementById("imb").value = result;
+            }
+
+        </script>
+    </table>
+</div>
+</body>
+</html>
